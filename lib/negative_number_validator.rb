@@ -1,4 +1,4 @@
-class NumberValidator
+class NegativeNumberValidator
   def self.call!(input)
     negatives = input.select(&:negative?)
 

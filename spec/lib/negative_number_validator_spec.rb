@@ -1,9 +1,9 @@
-require_relative '../../lib/number_validator'
+require_relative '../../lib/negative_number_validator'
 
-RSpec.describe NumberValidator do
+RSpec.describe NegativeNumberValidator do
   let(:input) { [] }
 
-  subject { NumberValidator.call!(input) }
+  subject { NegativeNumberValidator.call!(input) }
 
   describe '#call' do
     context "When input is empty array" do
