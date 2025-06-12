@@ -26,5 +26,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([42])
       end
     end
+
+    context "When there are multiple numbers with ',' as delimiter" do
+      let(:input) { "1, 2, 3" }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3])
+      end
+    end
   end
 end
