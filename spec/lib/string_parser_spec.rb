@@ -42,5 +42,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2, 3, 4])
       end
     end
+
+    context "When a custom delimiter is provided in input string" do
+      let(:input) { "//;\n1;2;3" }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3])
+      end
+    end
   end
 end

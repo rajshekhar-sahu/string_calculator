@@ -2,6 +2,15 @@ class StringParser
   def self.call(input)
     return [] if input.strip.empty?
 
-    input.split(/[\n,]+/).map(&:to_i)
+    delimiter = /[\n,]+/
+
+    if input.start_with?("//")
+      parts = input.split("\n", 2)
+      custom_delim = parts[0][2..]
+      delimiter = Regexp.new(Regexp.escape(custom_delim))
+      input = parts[1]
+    end
+
+    input.split(delimiter).map(&:to_i)
   end
 end
