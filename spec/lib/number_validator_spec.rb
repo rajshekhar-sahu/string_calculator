@@ -11,5 +11,13 @@ RSpec.describe NumberValidator do
         expect(subject).to eq([])
       end
     end
+
+    context "When input contains all positive numbers" do
+      let(:input) { [1, 2, 3] }
+
+      it "returns the input array" do
+        expect(subject).to eq(input)
+      end
+    end
   end
 end
