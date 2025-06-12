@@ -11,6 +11,6 @@ class StringParser
       input = parts[1]
     end
 
-    input.split(delimiter).map(&:to_i)
+    input.split(delimiter).map(&:to_i).select { |num| num <= 1000 }
   end
 end

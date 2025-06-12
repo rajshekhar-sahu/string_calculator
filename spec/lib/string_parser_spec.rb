@@ -50,5 +50,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2, 3])
       end
     end
+
+    context "When input contains number bigger than 1000" do
+      let(:input) { "1, 2, 1001" }
+
+      it "ignores numbers bigger than 1000" do
+        expect(subject).to eq([1, 2])
+      end
+    end
   end
 end
