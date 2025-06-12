@@ -34,5 +34,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2, 3])
       end
     end
+
+    context "When input string contains newline" do
+      let(:input) { "1, 2\n3\n4" }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3, 4])
+      end
+    end
   end
 end
