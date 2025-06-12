@@ -1,5 +1,5 @@
 class StringParser
   def self.call(input)
-    return [] if input.empty?
+    return [] if input.strip.empty?
   end
 end

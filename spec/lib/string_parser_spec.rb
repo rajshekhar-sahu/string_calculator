@@ -10,5 +10,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([])
       end
     end
+
+    context "When string with whitespace is provided" do
+      let(:input) { "   " }
+
+      it "returns empty array" do
+        expect(subject).to eq([])
+      end
+    end
   end
 end
