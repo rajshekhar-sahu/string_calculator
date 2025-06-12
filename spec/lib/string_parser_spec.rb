@@ -18,5 +18,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([])
       end
     end
+
+    context "When string is just a number" do
+      let(:input) { "42" }
+
+      it "returns array with number as integer" do
+        expect(subject).to eq([42])
+      end
+    end
   end
 end
