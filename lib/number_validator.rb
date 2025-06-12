@@ -1,5 +1,11 @@
 class NumberValidator
   def self.call!(input)
-    return input if input.empty? || input.all?(&:positive?)
+    negatives = input.select(&:negative?)
+
+    if negatives.any?
+      raise ArgumentError, "negative numbers are not allowed: #{negatives.join(', ')}"
+    end
+
+    input
   end
 end
