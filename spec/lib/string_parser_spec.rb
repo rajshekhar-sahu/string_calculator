@@ -58,5 +58,21 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2])
       end
     end
+
+    context "When custom delimiter's length is greater than 1" do
+      let(:input) { "//[***]\n1***2***3" }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3])
+      end
+    end
+
+    context "When there are multiple custom delimiters" do
+      let(:input) { "//[***][%%%]\n1***2%%%3" }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3])
+      end
+    end
   end
 end
