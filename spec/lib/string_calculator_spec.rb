@@ -2,7 +2,7 @@ require_relative '../../lib/string_calculator'
 
 RSpec.describe StringCalculator do
   let(:input) { '' }
-  subject { StringCalculator.new.call(input) }
+  subject { StringCalculator.call(input) }
 
   describe '#call' do
     context "When empty string is provided" do
