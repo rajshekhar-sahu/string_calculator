@@ -2,7 +2,7 @@ class StringParser
   def self.call(input)
     return [] if input.strip.empty?
 
-    delimiter, input = extract_delimiter_and_body(input)
+    delimiter, input = extract_delimiter_and_body(input.gsub('\n', "\n"))
     input.split(delimiter).map(&:to_i).select { |num| num <= 1000 }
   end
 

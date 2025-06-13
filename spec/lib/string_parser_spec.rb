@@ -74,5 +74,13 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2, 3])
       end
     end
+
+    context "When input is single quoted string with newline character" do
+      let(:input) { '1, 2\n3' }
+
+      it "returns array with numbers as integers" do
+        expect(subject).to eq([1, 2, 3])
+      end
+    end
   end
 end
