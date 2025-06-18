@@ -5,6 +5,13 @@ class StringCalculator
   def self.call(numbers)
     return 0 if numbers.strip.empty?
 
-    NegativeNumberValidator.call!(StringParser.call(numbers)).sum
+    numbers, delimiters = StringParser.call(numbers, true)
+    NegativeNumberValidator.call!(numbers)
+
+    if delimiters == ['*']
+      numbers.reduce(:*)
+    else
+      numbers.sum
+    end
   end
 end

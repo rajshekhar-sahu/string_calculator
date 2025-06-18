@@ -82,5 +82,14 @@ RSpec.describe StringParser do
         expect(subject).to eq([1, 2, 3])
       end
     end
+
+    context "When provide_del flag is provided" do
+      let(:input) { "//[***][%%%]\n1***2%%%3" }
+      subject { StringParser.call(input, true) }
+
+      it 'should return delimiters as well' do
+        expect(subject).to match_array([[1, 2, 3], ['***', '%%%']])
+      end
+    end
   end
 end

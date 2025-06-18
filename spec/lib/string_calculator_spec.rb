@@ -58,5 +58,13 @@ RSpec.describe StringCalculator do
         expect { subject }.to raise_error(ArgumentError, "negative numbers are not allowed: -2, -3")
       end
     end
+
+    context "When delimiter is *" do
+      let(:input) { '//*\n1*2*3*4' }
+
+      it 'should do the product of those numbers' do
+        expect(subject).to eq(24)
+      end
+    end
   end
 end
