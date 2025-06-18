@@ -8,7 +8,7 @@ class StringCalculator
     numbers, delimiters = StringParser.call(numbers, true)
     NegativeNumberValidator.call!(numbers)
 
-    if delimiters == ['*']
+    if delimiters.size == 1 && delimiters.first.squeeze == '*'
       numbers.reduce(:*)
     else
       numbers.sum

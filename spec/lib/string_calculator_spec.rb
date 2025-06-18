@@ -66,5 +66,13 @@ RSpec.describe StringCalculator do
         expect(subject).to eq(24)
       end
     end
+
+    context "When delimiter contains multiple *" do
+      let(:input) { '//[***]\n1***2***3***4' }
+
+      it 'should do the product of those numbers' do
+        expect(subject).to eq(24)
+      end
+    end
   end
 end
